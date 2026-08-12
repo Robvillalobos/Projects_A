@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
     private func setupButton() {
         let boton = UIButton(type: .system)
-        boton.setTitle("Proyecto Aa", for: .normal)
+        boton.setTitle("Proyecto A", for: .normal)
         boton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         boton.backgroundColor = .systemBlue
         boton.setTitleColor(.white, for: .normal)
