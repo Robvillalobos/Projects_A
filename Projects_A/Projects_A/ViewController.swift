@@ -7,35 +7,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITableViewDataSource {
+    
+    let tableView = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        setupButton()
+        
+        
+        tableView.frame = view.bounds
+        view.addSubview(tableView)
+        tableView.dataSource = self
+        
     }
-
-    private func setupButton() {
-        let boton = UIButton(type: .system)
-        boton.setTitle("Proyecto A", for: .normal)
-        boton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        boton.backgroundColor = .systemBlue
-        boton.setTitleColor(.white, for: .normal)
-        boton.layer.cornerRadius = 10
-        boton.translatesAutoresizingMaskIntoConstraints = false
-        boton.addTarget(self, action: #selector(botonPresionado), for: .touchUpInside)
-
-        view.addSubview(boton)
-
-        NSLayoutConstraint.activate([
-            boton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            boton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            boton.widthAnchor.constraint(equalToConstant: 220),
-            boton.heightAnchor.constraint(equalToConstant: 50)
-        ])
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
     }
-
-    @objc private func botonPresionado() {
-        print("Se presionó el botón Proyecto A")
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell (style: .default, reuseIdentifier: nil)
+        
+        cell.textLabel?.text = "Hola"
+        return cell
     }
-}
+    }
