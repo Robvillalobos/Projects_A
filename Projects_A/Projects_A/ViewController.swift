@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.frame = view.bounds
         view.addSubview(tableView)
         tableView.dataSource = self
+        tableView.delegate = self
         
     }
     
@@ -34,4 +35,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text = nombres[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let nombres = nombres[indexPath.row]
+        print(" Has tocado a \(nombres)")
+        
+        
+    }
+    
+    
+    
     }
