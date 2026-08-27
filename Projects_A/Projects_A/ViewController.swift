@@ -7,9 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let tableView = UITableView()
+    
+    let nombres = ["Roberto", "Pedro", "Maria", "Carlos",]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +24,14 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return nombres.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell (style: .default, reuseIdentifier: nil)
         
-        cell.textLabel?.text = "Hola"
+        cell.textLabel?.text = nombres[indexPath.row]
         return cell
     }
     }
