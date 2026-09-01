@@ -11,7 +11,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let tableView = UITableView()
     
-    let nombres = ["Roberto", "Pedro", "Maria", "Carlos",]
+    let frutas = ["Manzana", "Banana", "Naranja", "Fresa", "Uva"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,21 +25,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nombres.count
+        return frutas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell (style: .default, reuseIdentifier: nil)
         
-        cell.textLabel?.text = nombres[indexPath.row]
+        cell.textLabel?.text = frutas[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let nombres = nombres[indexPath.row]
-        print(" Has tocado a \(nombres)")
+        let frutas = frutas[indexPath.row]
+        print(" Has tocado a \(frutas)")
         
         
     }
